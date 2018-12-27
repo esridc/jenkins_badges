@@ -53,6 +53,8 @@ def create_app(from_envvar=False, base_url=None, username=None, token=None,
         raise ValueError("must supply a valid base url for the jenkins instance")
 
     from jenkins_badges.coverage_badge import coverage_badge
+    from jenkins_badges.status_badge import status_badge
     app.register_blueprint(coverage_badge)
+    app.register_blueprint(status_badge)
 
     return app
